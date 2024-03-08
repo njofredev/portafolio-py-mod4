@@ -7,7 +7,7 @@ Nicolás Jofré Andrade
 polimorfismo en Python. Crear clases como: empleado, departamento y clases derivadas
 como: desarrollador y gerente que hereden de empleado.
 """
-# 
+# Definición de clases
 class Empleado:
     
     def __init__(self, nombre, apellido, departamento):
