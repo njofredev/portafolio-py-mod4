@@ -60,7 +60,7 @@ while True:
     elif opcionMenu == 3:
         print(cliente1.retirar())
     elif opcionMenu == 4:
-        print("Gracias por participar del gestor de Usuario!")
+        print("Gracias por participar!")
         break
     else:
         print("ERROR: Ingrese un valor correspondiente al menú")
