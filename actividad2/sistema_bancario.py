@@ -63,4 +63,4 @@ while True:
         print("Gracias por participar del gestor de Usuario!")
         break
     else:
-        print("Ingrese un valor correspondiente al menú")
+        print("ERROR: Ingrese un valor correspondiente al menú")
