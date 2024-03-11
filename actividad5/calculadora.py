@@ -8,18 +8,24 @@ realizar operaciones básicas como: suma, resta, multiplicación y división. De
 errores y excepciones como la división por 0 y la entrada incorrecta del usuario.
 - metas: usar assert() e isinstance() para la comprobación de erorres
 """
-class Calculadora:
+"""class Calculadora:
     
     def __init__(self, operacion):
-        self.operacion = operacion
+        self.operacion = operacion""" # Suma, resta, multiplicacion, division
         
 class Operacion:
-    pass
+    
+    def __init__(self, num_1, num_2, operacion, resultado):
+        self.num_1 = num_1
+        self.num_2 = num_2
+        self.operacion = operacion
+        self.resultado = resultado
     
     def sumar(self):
-        
-        assert isinstance(int) # Assert para verificar el dato que quiero en la variable a
-        assert isinstance(int)
+        self.num_1 = int(input("Ingrese el primero número: \n"))
+        self.num_2 = int(input("Ingrese el segundo número: \n"))
+
+        print(f"La suma de {self.num_1} y {self.num_2} es: {self.num_1 + self.num_2}")
 
     def restar(self, a, b):
         pass
@@ -30,4 +36,6 @@ class Operacion:
     def dividir(self, a, b):
         pass
 
-        
+calculadora = Operacion(1, 2, "suma", 3)
+
+calculadora.sumar()
