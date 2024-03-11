@@ -8,6 +8,15 @@ polimorfismo en Python. Crear clases como: empleado, departamento y clases deriv
 como: desarrollador y gerente que hereden de empleado.
 """
 # Definición de clases
+
+class Departamento:
+        
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def get_departamento(self):
+        print(f"El nombre del departamento es: {self.nombre}")
+
 class Empleado:
     
     def __init__(self, nombre, apellido, departamento):
@@ -15,22 +24,11 @@ class Empleado:
         self.apellido = apellido
         self.departamento = departamento
 
-    def __str__(self):
-        return f"{self.nombre} {self.apellido} ({self.departamento})"
-
     def get_nombre_empleado(self):
         return f"{self.nombre} {self.apellido}"
 
     def get_departamento(self):
         return self.departamento
-
-class Departamento:
-        
-    def __init__(self, nombre):
-        self.nombre = nombre
-
-    def __str__(self):
-        return self.nombre
 
 class Desarrollador(Empleado): # Herencia de Empleado
     
@@ -50,12 +48,12 @@ class Gerente(Empleado):
         return f"{super().__str__()} - Tiene a cargo: {len(self.empleados_a_cargo)} personas."
 
 # Se generan 2 departamentos
-departamento_desarrollo = Departamento("Desarrollo")
-departamento_gerencia = Departamento("Gerencia")
+dep_desarrollo = Departamento("Desarrollo")
+dep_gerencia = Departamento("Gerencia")
 
 # Se generan 2 empleados
-empleado1 = Desarrollador("Juan", "Pérez", departamento_desarrollo, "Python")
-empleado2 = Gerente("María", "Gómez", departamento_gerencia, [empleado1])
+empleado1 = Desarrollador("Juan", "Pérez", dep_desarrollo, "Python")
+empleado2 = Gerente("María", "Gómez", dep_gerencia, [empleado1])
 
 print(empleado1)
 print(empleado2)  
