@@ -9,35 +9,35 @@ como: desarrollador y gerente que hereden de empleado.
 """
 # Definición de clases
 
-class Departamento:
+class Departamento: #nombre_departamento
         
     def __init__(self, nombre_departamento):
         self.nombre = nombre_departamento
 
-    def get_departamento(self):
+    def get_departamento(self): # get datos de departamento
         print(f"El nombre del departamento es: {self.nombre_departamento}")
 
-class Empleado(Departamento):
+class Empleado(Departamento): # #nombre_departamento #id, nombre, apellido
     
-    def __init__(self, nombre):
-        super().__init__(nombre)
+    def __init__(self, nombre_departamento, id, nombre, apellido ): # Heredo nombre_departamento
+        super().__init__(nombre_departamento, id, nombre, apellido)
 
-    def get_nombre_empleado(self):
-        return f"{self.nombre} {self.apellido}"
+    def get_datos_empleados(self): # get
+        return print(f"{self.nombre} {self.apellido}")
 
     def get_departamento(self): #polimorfismo
         return self.departamento
 
-class Desarrollador(Empleado): # Herencia de Empleado
+class Desarrollador(Empleado): # Herencia de Empleado # lenguaje favorito
     
-    def __init__(self, nombre, apellido, departamento, lenguaje_favorito):
-        super().__init__(nombre, apellido, departamento)
+    def __init__(self, nombre, apellido, nombre_departamento, lenguaje_favorito):
+        super().__init__(nombre, apellido, nombre_departamento)
         self.lenguaje_favorito = lenguaje_favorito
 
-    def __str__(self): # Presentación informal del objeto con __str__ y __repr__ para una presentación formal
-        return f"{super().__str__()} - Lenguaje favorito: {self.lenguaje_favorito}"
+    def get_datos_desarrollador(self): # Presentación informal del objeto con __str__ y __repr__ para una presentación formal
+        return print(f"{self.nombre} {self.apellido} {self.nombre_departamento} {self.lenguaje_favorito}")
 
-class Gerente(Empleado):
+class Gerente(Empleado): # Herencia de empleado #
     def __init__(self, nombre, apellido, departamento, empleados_a_cargo):
         super().__init__(nombre, apellido, departamento)
         self.empleados_a_cargo = empleados_a_cargo
