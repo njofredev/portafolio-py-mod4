@@ -11,23 +11,21 @@ como: desarrollador y gerente que hereden de empleado.
 
 class Departamento:
         
-    def __init__(self, nombre):
-        self.nombre = nombre
+    def __init__(self, nombre_departamento):
+        self.nombre = nombre_departamento
 
     def get_departamento(self):
-        print(f"El nombre del departamento es: {self.nombre}")
+        print(f"El nombre del departamento es: {self.nombre_departamento}")
 
-class Empleado:
+class Empleado(Departamento):
     
-    def __init__(self, nombre, apellido, departamento):
-        self.nombre = nombre
-        self.apellido = apellido
-        self.departamento = departamento
+    def __init__(self, nombre):
+        super().__init__(nombre)
 
     def get_nombre_empleado(self):
         return f"{self.nombre} {self.apellido}"
 
-    def get_departamento(self):
+    def get_departamento(self): #polimorfismo
         return self.departamento
 
 class Desarrollador(Empleado): # Herencia de Empleado
