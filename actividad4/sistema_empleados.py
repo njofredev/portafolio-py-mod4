@@ -10,10 +10,11 @@ como: desarrollador y gerente que hereden de empleado.
 # Definición de clases
 class Empleado:
 
-    def __init__(self, id, nombre, apellido):
+    def __init__(self, id, nombre, apellido, cargo):
         self.id = id
         self.nombre = nombre
         self.apellido = apellido
+        self.cargo = cargo
 
     def modificar_datos(self):
         empleados = []
@@ -29,10 +30,10 @@ class Empleado:
     def mostrar_datos(self):
         return print(f"Hola, soy el empleado {self.id}, mi nombre es: {self.nombre} y mi apellido es: {self.apellido}")
     
-class Departamento(Empleado):
+class Departamento(Empleado): # Nombre de departamento
 
-    def __init__(self, empleado, nombre_departamento):
-        super().__init__(id, empleado, nombre_departamento)
+    def __init__(self, id, nombre, apellido, cargo, nombre_departamento):
+        super().__init__(id, nombre, apellido, cargo, nombre_departamento)
         self.nombre_departamento = nombre_departamento
 
     def mostrar_datos(self):
@@ -40,12 +41,12 @@ class Departamento(Empleado):
     
 class Desarrollador(Empleado):
 
-    def __init__(self, id, nombre, apellido, lenguaje_favorito):
-        super().__init__(id, nombre, apellido, lenguaje_favorito)
+    def __init__(self, id, nombre, apellido, cargo, lenguaje_favorito):
+        super().__init__(id, nombre, apellido, cargo, lenguaje_favorito)
         self.lenguaje_favorito = lenguaje_favorito
 
     def mostrar_datos(self):
-        return print(super().Saludar())
+        return print(f"los datos del desarrollador son: ")
 
 class Gerente(Empleado):
 
@@ -53,29 +54,8 @@ class Gerente(Empleado):
         super().__init__(id, nombre, apellido, empleados_a_cargo)
         self.empleados_a_cargo = empleados_a_cargo
 
-empleado_1 = Empleado("001", "Nicolás", "Jofré")
-departamento_1 = Departamento(Empleado, "Desarrollo")
-departamento_2 = Departamento(Empleado, "Gerencia")
+empleado_1 = Empleado("001", "Nicolás", "Jofré", "Desarrollador")
+empleado_2 = Empleado("002", "Pedro", "Aniz", "Gerente")
 
-# Menú e instancias
-empleados = []
-while True:
-    print("\n***Sistema de empleados***")
-    print("(1) Agregue un empleado")
-    print("(2) Ver datos de empleados")
-    print("(3) Modificar datos de empleado")
-    print("(4) Salir del programa")
-    opcion_menu = int(input("Ingrese un valor del menú: "))
+print(f"Los datos de empleado son: {empleado_1.id}/{empleado_1.nombre}/{empleado_1.apellido}/{empleado_1.cargo}")
 
-    if opcion_menu == 1:
-        cantidad = int(input("Ingrese la cantidad de empleados: "))
-        for i in range(empleados):
-            pass
-    elif opcion_menu == 2:
-        pass
-    elif opcion_menu == 3:
-        pass
-    elif opcion_menu == 4:
-        pass
-    else:
-        print("ERROR: Ingrese un valor válido del menú...")

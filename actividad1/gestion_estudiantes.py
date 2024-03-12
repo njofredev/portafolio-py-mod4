@@ -24,9 +24,11 @@ class Estudiante:
         
         cant_calificaciones = int(input("Ingrese la cantidad de notas a cambiar: "))
         cali = []
+
         for n in range(cant_calificaciones):
             nota = float(input(f"Ingrese la nota°{n + 1}: \n"))
             cali.append(nota)
+            
         self.calificaciones = cali    
         print(f"El nuevo nombre es: {self.nombre}, la nueva edad es: {self.edad} y las nuevas calificaciones son: {self.calificaciones}")
         

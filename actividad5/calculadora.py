@@ -60,7 +60,6 @@ class Operacion:
                 print("ERROR: Está intentando dividir por 0.")
                 break
         
-
 # Instancia de la clase
 calculadora = Operacion()            
 
