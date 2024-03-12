@@ -2,56 +2,80 @@
 Actividad n°4 "Sistema de empleados"
 Nicolás Jofré Andrade
 
-- Crea un archivo llamado sistema_emepleados.py
+- Crea un archivo llamado sistema_empleados.py
 - Implementar un programa que modele un sistema de empleados utilizando herencia y 
 polimorfismo en Python. Crear clases como: empleado, departamento y clases derivadas
 como: desarrollador y gerente que hereden de empleado.
 """
 # Definición de clases
+class Empleado:
 
-class Departamento: #nombre_departamento
-        
-    def __init__(self, nombre_departamento):
-        self.nombre = nombre_departamento
+    def __init__(self, id, nombre, apellido):
+        self.id = id
+        self.nombre = nombre
+        self.apellido = apellido
 
-    def get_departamento(self): # get datos de departamento
-        print(f"El nombre del departamento es: {self.nombre_departamento}")
+    def modificar_datos(self):
+        empleados = []
+        self.id = input("Ingrese el ID del empleado: ")
+        self.nombre = input("Ingrese el nombre del empleado: ")
+        self.apellido = input("Ingrese el apellido del empleado: ")
 
-class Empleado(Departamento): # #nombre_departamento #id, nombre, apellido
+        for e in empleados:
+            empleados.append(self.id)
+            empleados.append(self.nombre)
+            empleados.append(self.apellido)
+
+    def mostrar_datos(self):
+        return print(f"Hola, soy el empleado {self.id}, mi nombre es: {self.nombre} y mi apellido es: {self.apellido}")
     
-    def __init__(self, nombre_departamento, id, nombre, apellido ): # Heredo nombre_departamento
-        super().__init__(nombre_departamento, id, nombre, apellido)
+class Departamento(Empleado):
 
-    def get_datos_empleados(self): # get
-        return print(f"{self.nombre} {self.apellido}")
+    def __init__(self, empleado, nombre_departamento):
+        super().__init__(id, empleado, nombre_departamento)
+        self.nombre_departamento = nombre_departamento
 
-    def get_departamento(self): #polimorfismo
-        return self.departamento
-
-class Desarrollador(Empleado): # Herencia de Empleado # lenguaje favorito
+    def mostrar_datos(self):
+        return print(f"el departamento es: {self.nombre_departamento}.")
     
-    def __init__(self, nombre, apellido, nombre_departamento, lenguaje_favorito):
-        super().__init__(nombre, apellido, nombre_departamento)
+class Desarrollador(Empleado):
+
+    def __init__(self, id, nombre, apellido, lenguaje_favorito):
+        super().__init__(id, nombre, apellido, lenguaje_favorito)
         self.lenguaje_favorito = lenguaje_favorito
 
-    def get_datos_desarrollador(self): # Presentación informal del objeto con __str__ y __repr__ para una presentación formal
-        return print(f"{self.nombre} {self.apellido} {self.nombre_departamento} {self.lenguaje_favorito}")
+    def mostrar_datos(self):
+        return print(super().Saludar())
 
-class Gerente(Empleado): # Herencia de empleado #
-    def __init__(self, nombre, apellido, departamento, empleados_a_cargo):
-        super().__init__(nombre, apellido, departamento)
+class Gerente(Empleado):
+
+    def __init__(self, id, nombre, apellido, empleados_a_cargo):
+        super().__init__(id, nombre, apellido, empleados_a_cargo)
         self.empleados_a_cargo = empleados_a_cargo
 
-    def __str__(self):
-        return f"{super().__str__()} - Tiene a cargo: {len(self.empleados_a_cargo)} personas."
+empleado_1 = Empleado("001", "Nicolás", "Jofré")
+departamento_1 = Departamento(Empleado, "Desarrollo")
+departamento_2 = Departamento(Empleado, "Gerencia")
 
-# Se generan 2 departamentos
-dep_desarrollo = Departamento("Desarrollo")
-dep_gerencia = Departamento("Gerencia")
+# Menú e instancias
+empleados = []
+while True:
+    print("\n***Sistema de empleados***")
+    print("(1) Agregue un empleado")
+    print("(2) Ver datos de empleados")
+    print("(3) Modificar datos de empleado")
+    print("(4) Salir del programa")
+    opcion_menu = int(input("Ingrese un valor del menú: "))
 
-# Se generan 2 empleados
-empleado1 = Desarrollador("Juan", "Pérez", dep_desarrollo, "Python")
-empleado2 = Gerente("María", "Gómez", dep_gerencia, [empleado1])
-
-print(empleado1)
-print(empleado2)  
+    if opcion_menu == 1:
+        cantidad = int(input("Ingrese la cantidad de empleados: "))
+        for i in range(empleados):
+            pass
+    elif opcion_menu == 2:
+        pass
+    elif opcion_menu == 3:
+        pass
+    elif opcion_menu == 4:
+        pass
+    else:
+        print("ERROR: Ingrese un valor válido del menú...")
