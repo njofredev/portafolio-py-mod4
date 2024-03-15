@@ -10,8 +10,6 @@ Nicolás Jofré Andrade
 - Crea un archivo llamado manejo_archivos.py que lea registro_notas.txt y calcule el
 promedio de las notas y escriba en un nuevo archivo promedio_notas.txt los resultados.
 """
-import os
-
 def leer_archivo():
 
     try:
