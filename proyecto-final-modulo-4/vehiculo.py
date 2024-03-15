@@ -35,7 +35,7 @@ class Vehiculo:
         else:
             print(f"El auto marca: {self.marca}, modelo: {self.modelo}, color: {self.color} va a: {self.velocidad}km/h")
 
-
+# Instancia de la clase
 vehiculo = Vehiculo("BMW", "X4", "Negro", 0, 0)
 
 while True:
