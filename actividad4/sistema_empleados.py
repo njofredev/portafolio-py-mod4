@@ -58,4 +58,5 @@ empleado_1 = Empleado("001", "Nicolás", "Jofré", "Desarrollador")
 empleado_2 = Empleado("002", "Pedro", "Aniz", "Gerente")
 
 print(f"Los datos de empleado son: {empleado_1.id}/{empleado_1.nombre}/{empleado_1.apellido}/{empleado_1.cargo}")
+print(f"Los datos de empleado son: {empleado_2.id}/{empleado_2.nombre}/{empleado_2.apellido}/{empleado_2.cargo}")
 
